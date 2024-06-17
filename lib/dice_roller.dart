@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget{
@@ -37,9 +39,33 @@ class _DiceRollerState extends State<DiceRoller>{
     );
   }
   roleDice(){
+    var randomNumber = Random().nextInt(6);
+    String newDiceImage;
+    switch (randomNumber) {
+      case 1:
+        newDiceImage = 'assets/images/dice-1.png';
+        break;
+      case 2:
+        newDiceImage = 'assets/images/dice-2.png';
+        break;
+      case 3:
+        newDiceImage = 'assets/images/dice-3.png';
+        break;
+      case 4:
+        newDiceImage = 'assets/images/dice-4.png';
+        break;
+      case 5:
+        newDiceImage = 'assets/images/dice-5.png';
+        break;
+      case 6:
+        newDiceImage = 'assets/images/dice-6.png';
+        break;
+      default:
+        newDiceImage = 'assets/images/dice-1.png'; // Default case
+    }
     setState(() {
-      activeDiceImage = 'assets/images/dice-4.png';
+      activeDiceImage = activeDiceImage = newDiceImage;;
     });
-    print('Changing image');
+    print(randomNumber);
   }
 }
