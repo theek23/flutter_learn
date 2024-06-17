@@ -39,8 +39,8 @@ class _DiceRollerState extends State<DiceRoller>{
     );
   }
   roleDice(){
-    var randomNumber = Random().nextInt(6);
-    String newDiceImage;
+    var randomNumber = Random().nextInt(6)+1;
+    /*String newDiceImage;
     switch (randomNumber) {
       case 1:
         newDiceImage = 'assets/images/dice-1.png';
@@ -62,9 +62,10 @@ class _DiceRollerState extends State<DiceRoller>{
         break;
       default:
         newDiceImage = 'assets/images/dice-1.png'; // Default case
-    }
+    }*/
     setState(() {
-      activeDiceImage = activeDiceImage = newDiceImage;;
+      //activeDiceImage = activeDiceImage = newDiceImage;;
+      activeDiceImage = 'assets/images/dice-$randomNumber.png';
     });
     print(randomNumber);
   }
